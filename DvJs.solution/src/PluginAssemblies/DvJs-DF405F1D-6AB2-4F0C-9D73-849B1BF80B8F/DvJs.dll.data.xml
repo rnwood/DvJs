@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" PluginAssemblyId="df405f1d-6ab2-4f0c-9d73-849b1bf80b8f" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/DvJs-DF405F1D-6AB2-4F0C-9D73-849B1BF80B8F/DvJs.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="DvJs.JavascriptCodeActivity, DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" PluginTypeId="e99f3af7-b94e-4a39-bed8-3b0dfc6249e9" Name="Evaluate Javascript code">
+      <FriendlyName>648c3241-c31f-4253-8fba-7edd09d50d77</FriendlyName>
+      <WorkflowActivityGroupName>DvJs (1.0.0.0)</WorkflowActivityGroupName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="DvJs.JavascriptCodeFromWebResourceActivity, DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" PluginTypeId="5b662bfc-ca92-4a3a-9dd7-169a999f77e9" Name="Evaluate Javascript code from webresource">
+      <FriendlyName>b7ac6c31-940d-4aaf-9884-04b80d93f0d8</FriendlyName>
+      <WorkflowActivityGroupName>DvJs (1.0.0.0)</WorkflowActivityGroupName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="DvJs.JavascriptCodeFromWebResourcePlugin, DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" PluginTypeId="32a97b59-71e8-4f20-9157-1c1aa670be17" Name="DvJs.JavascriptCodeFromWebResourcePlugin">
+      <FriendlyName>80c51233-a881-45d1-bdb7-db7dd87542e7</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="DvJs.JavascriptCodePlugin, DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" PluginTypeId="2e98a87d-e368-4389-bff2-93e232b2444f" Name="DvJs.JavascriptCodePlugin">
+      <FriendlyName>470a23aa-2789-48da-8cc4-2be1f9057171</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

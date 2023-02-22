@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+       <!-- Match specific named files to an alternate folder. Solution Package drops files to obj\Metadata. So, relative path needs to work its way up -->
+       <FileToFile map="DvJs.dll" to="..\..\..\..\Plugins\DvJs\bin\Debug\DvJs.dll" />
+</Mapping>
