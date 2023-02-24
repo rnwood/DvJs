@@ -6,3 +6,5 @@
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+*.dll
