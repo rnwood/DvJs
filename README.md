@@ -14,11 +14,26 @@ The platform currently has a gap in terms of it's capability to add synchronous 
 
 ### Q: Why low-code?
 
-TODO
+Low-code (a simple language and a simple API) let us develop and iterate quicker - More time focusing on the core logic of the system and not on the platform and plumbing needed to get it to work.
 
-### Q: Why is sychronous important? (Why not us Power Automate?)
+The cons are less flexibility/capability than a lower level language/API and reduced performance.
 
-TODO
+### Q: Why not do this using PowerFX language?
+
+The idea for DvJs came about before PowerFX was a thing. Using PowerFx is a great idea and we hope that MS will add this natively to the Dataverse platform soon.
+
+[Check out cchannon/PowerFXPlugin](https://github.com/cchannon/PowerFXPlugin) for a project that is attempting to do this in the mean time, although this project currently only allows very simple use-cases to be achieved.
+
+### Q: Why is being able to run synchronously important? (Why not use Power Automate?)
+
+Power Automate is great, but it cannot process changes sychronously during Dataverse events.
+
+Being able to run synchronously is important both for consistency and for user-experience.
+
+Consistency - Async actions are only eventually consistent. But if no-one is monitoring and taking compensating actions when they fail, data can be lost and left in an incomplete state! I believe that all key business rules within a system should be strongly consistent unless a robust design/system is put in place where it is required to ensure the "evental" can actually be achieved. The trade-off of synchronous is that the user will need to wait whilst the actions are peformed and (benefit or drawback depending on case) they will directly see any resulting errors. So choose carefully, but don't make async the default unless you accept the work involved.
+
+User-experience - Users have an expectation that most actions within a system should be processed in real time, expecially if they are "simple". e.g. Many would consider it unexpected if after changing "last name", that after hitting save "full name" is not immediately up to date and visible to them. 
+So again, I believe that sync actions should be the default except where it can reasonably be expected by the user and the UX has been considered so they are aware displayed info may be outdated.
 
 ### Q: What is the level of stabilty?
 Experimental - use this in production projects at your own risk! It is most suited to internal tools and demos where you need to move rapidly or for early stages of project where you will come back and replace the scripts with proper plugins.
@@ -28,9 +43,16 @@ Obviously this approach carries an overhead vs writing hand-crafted and optimise
 
 ## Example Scripts
 
+### Super simple calculation
+
+*What this example does: Updates fullname based on firstname and lastname. Note no complex code to retrieve pre-image and check what has changed - all columns available to read via target reflecting latest state of the row. This example is registered in the pre-operatation stage, so the change to target is automatically saved.*
+```
+target.mycorp_fullname = target.mycorp_firstname + " " + target.mycorp_lastname;
+```
+
 ### Handling Update and Setting Status of Related Record
 
-Check if the `mycorp_iscomplete` column value is true and if so, sets the status of the related record to complete. The related record is fetched automatically when it is referenced.
+*What this example does: Check if the `mycorp_iscomplete` column value is true and if so, sets the status of the related record to complete. The related record is fetched automatically when it is referenced.*
 ```
 if (target.mycorp_iscomplete) {
     let myParent = target.mycorp_parentid;
@@ -42,7 +64,7 @@ if (target.mycorp_iscomplete) {
 
 ### Handling Create message and calling a custom API
 
-Triggers when a new row is created and uses the custom API (next example) to generate a new related set of records. Then modifies the current row before it is aved to associate with it.
+*What this example does: Triggers when a new row is created and uses the custom API (next example) to generate a new related set of records. Then modifies the current row before it is aved to associate with it.*
 
 ```
 let defId = envvar("mycorp_AppTechnicalAssessmentDefinitionId");
@@ -55,8 +77,7 @@ target.mycorp_technicalassessmentid = assessment;
 
 ### Custom API implementation (Row Scoped)
 
-Creates a complex set of records by copying from a set of 'definition' records.
-Notice that there is no code to fetch the related records.
+*What this example does: Creates a complex set of related records by copying from a set of 'definition' records. Notice that there is no code needed to fetch the related records.*
 ```
 let definition = target;
 
@@ -87,7 +108,21 @@ setOutputEntityReference("CreatedAssessmentId", assessment);
 
 ## Available Plugin Types
 
+Supports (tested) messages: `Create`, `Update`, `Delete`, `<custom API message for row scoped API>` for all of below.
+
+### DvJs.JavascriptCodePlugin
+The Javascript script to execute should be placed in the unsecure configuration for the plugin step.
+
+### DvJs.JavascriptCodeFromWebResourcePlugin
+The unique name of of a web resource should be placed in the unsecure configuration. The web resource should contain the Javascript script to be executed will be read from the contents of this web resource.
+
 ## Available Workflow Activity Types
+
+### DvJs.JavascriptCodeActivity
+The Javascript script to execute should be placed in the "Script" input parameter for the activity. The results of evaluation are available as a string in the "Result" output parameter. So this can be used to do calcuations in Workflows as well as taking advanced actions.
+
+### DvJs.JavascriptCodeFromWebResourceActivity
+The Javascript script to execute should be placed in the web resource content and the reference to that web resource placed in the "Web Resource" input parameter. The results of evaluation are available as a string in the "Result" output parameter. So this can be used to do calcuations in Workflows as well as taking advanced actions.
 
 
 ## Script API
