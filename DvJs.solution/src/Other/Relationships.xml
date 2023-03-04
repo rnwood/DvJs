@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_rnwood_dvjsbusinessrulestesttable" />
+  <EntityRelationship Name="lk_rnwood_dvjsbusinessrulestesttable_createdby" />
+  <EntityRelationship Name="lk_rnwood_dvjsbusinessrulestesttable_modifiedby" />
+  <EntityRelationship Name="owner_rnwood_dvjsbusinessrulestesttable" />
+  <EntityRelationship Name="team_rnwood_dvjsbusinessrulestesttable" />
+  <EntityRelationship Name="user_rnwood_dvjsbusinessrulestesttable" />
+</EntityRelationships>

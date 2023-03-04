@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{c6aa8d72-93b6-ed11-83ff-0022489f7cc6}</WebResourceId>
+  <Name>rnwood_/DvJs/dvjs-test.js</Name>
+  <DisplayName>rnwood_/DvJs/dvjs-test.js</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/rnwood_DvJsdvjs-testjsC6AA8D72-93B6-ED11-83FF-0022489F7CC6</FileName>
+</WebResource>

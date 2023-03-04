@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23014.178" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23015.196" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DvJs</UniqueName>
     <LocalizedNames>
@@ -78,6 +78,9 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="1" schemaName="rnwood_dvjsbusinessrulestesttable" behavior="0" />
+      <RootComponent type="61" schemaName="rnwood_/DvJs/dvjs.js" behavior="0" />
+      <RootComponent type="61" schemaName="rnwood_/DvJs/dvjs-test.js" behavior="0" />
       <RootComponent type="91" id="{df405f1d-6ab2-4f0c-9d73-849b1bf80b8f}" schemaName="DvJs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4897816d6955bad2" behavior="0" />
     </RootComponents>
     <MissingDependencies />

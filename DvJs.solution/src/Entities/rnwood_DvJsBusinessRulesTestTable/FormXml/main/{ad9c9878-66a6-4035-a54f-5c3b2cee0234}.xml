@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ad9c9878-66a6-4035-a54f-5c3b2cee0234}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{5cc6b358-4aab-4acb-94d1-6437bec7c735}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{d9f25aff-76cc-4c47-8b9d-2c83cb730d87}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{6679f47b-e904-4209-8457-9e9db59cee91}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="rnwood_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="rnwood_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2e5e2028-20bf-4aaa-8fe2-afa578019cff}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="mySection" id="c27c55ec-ff02-4d59-8c65-26257a42d484" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{721d2d92-69ff-45ce-908c-068d83a69326}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Created By" languagecode="1033" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{08805f62-4e6d-40b5-85ee-67c8bca3850f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7f85b1f7-dd43-41c9-98a9-210aaa58047e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4bae23f9-41f9-4082-be8f-389d1015c977}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{5e171e7a-269d-4dd5-b4d1-f74684f30c9a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{bd93e185-b070-4e11-a65d-d5750ad83584}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{e682bcb6-00a1-4478-a238-b7aed380b412}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d3952652-1d6e-47c4-9364-280cca981407}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{82e2c24e-b8f3-44ef-bb00-de80fe5390ac}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="rnwood_/DvJs/dvjs.js" libraryUniqueId="{3b947e5e-60c4-4c46-a26a-ac55ad797f76}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="DvJs.init" libraryName="rnwood_/DvJs/dvjs.js" handlerUniqueId="{2f07a96b-3810-4c17-b6d3-0d6288201414}" enabled="true" parameters="&quot;rnwood_/DvJs/dvjs-test.js&quot;" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
