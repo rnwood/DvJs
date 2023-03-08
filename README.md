@@ -2,9 +2,19 @@
 
 DvJs is a set of extensions for Microsoft Dataverse (Power Platform, Power Apps) that allows you to write JavaScript event handlers that run server side for plugin steps, custom APIs and classic workflow steps. These scripts use a highly simplified low-code(ish) API to interact with Dataverse, in order to make it as easy as possible to write them quickly.
 
-DvJs could also be used to allow rules in your app to be configurable using scripts, allowing a lot more flexibility than is possible using a data-driven approach.
+DvJs could also potentially be used to allow rules in your app to be configurable using scripts, allowing a lot more flexibility than is possible using a data-driven approach.
 
+## Getting Started
 
+One time:
+1) Import the managed solution
+
+For each event you want to handle:
+1) Create a web resource containing the JS you want to execute. See the docs below for the available API.
+2) Run the plugin registration tool. The easiest way to run this is using [Power Apps CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction) command `pac tool prt`.
+2) Create step against `DvJs.JavascriptCodeFromWebResourcePlugin` plugin type. See the docs below for more info on the supported events.
+3) Put the schema name of the webresource in the unsecure configuration for the plugin step.
+4) Don't forget to add the plugin step to your solution.
 
 ## FAQs
 ### Q: Why would you do this?
@@ -109,6 +119,8 @@ setOutputEntityReference("CreatedAssessmentId", assessment);
 ## Available Plugin Types
 
 Supports (tested) messages: `Create`, `Update`, `Delete`, `<custom API message for row scoped API>` for all of below.
+
+Post-operation events must supply a pre-image named "PreImage" with all attributes. This is to allow change detection.
 
 ### DvJs.JavascriptCodePlugin
 The Javascript script to execute should be placed in the unsecure configuration for the plugin step.
